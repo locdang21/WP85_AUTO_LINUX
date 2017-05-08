@@ -34,14 +34,16 @@ if test "$(ulimit -n)" -lt 10240
 then
         echo " Ulimit is to low." | tee -a logs/install.log;
         echo "Increase the ulimit for the user before continuing" | tee -a logs/install.log;
+	echo "Set the following in the /etc/security/limits.conf" | tee -a logs/install.log;
+	echo "*     soft     nofile     10240" | tee -a logs/install.log
 	date | tee -a logs/install.log;
         exit 1
 fi
 
 echo "*** Check Ulimit - complete ***" | tee -a logs/install.log;
 date | tee -a logs/install.log; echo | tee -a logs/install.log;
-
 echo | tee -a logs/install.log;
+
 echo "*** Check Hostname - start ***" | tee -a logs/install.log;
 date | tee -a logs/install.log;
 
@@ -61,7 +63,6 @@ date | tee -a logs/install.log; echo | tee -a logs/install.log;
 ./installWAS.sh;
 ./installJDK.sh;
 ./installPortal.sh;
-
 
 echo "Everything Complete" | tee -a logs/install.log;
 date | tee -a logs/install.log; echo | tee -a logs/install.log;

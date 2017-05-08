@@ -14,18 +14,18 @@ WAS_HOME=/opt/IBM/WebSphere/AppServer
 IIM_SHARED=/opt/IBM/IIMShared
 WP_HOME=/opt/IBM/WebSphere/PortalServer
 CE_HOME=/opt/IBM/WebSphere/ConfigEngine
-WP_PROFILENAME=portal_profile
-WP_PROFILE=/opt/IBM/WebSphere/profiles/portal_profile
+WP_PROFILENAME=wp_profile
+WP_PROFILE=/opt/IBM/WebSphere/wp_profile
 CW_ADMIN=cwadmin
-CW_PWD=p4ssword
+CW_PWD=passw0rd
 WP_HOSTNAME=wps85-64.ibm.com
-WP_NODE=wasNode01
-WP_CELL=wasCell01
+WP_NODE=wpNode01
+WP_CELL=wpCell01
 WP_ADMIN=wpsadmin
 WP_PWD=passw0rd
-WP_CONTEXT=portal
-WP_DEFAULT=wp
-WP_PERSONALIZED=mywp
+WP_CONTEXT=wps
+WP_DEFAULT=portal
+WP_PERSONALIZED=myportal
 WP_STARTPORT=10012
 
 

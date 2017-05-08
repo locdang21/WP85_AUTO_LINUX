@@ -5,6 +5,7 @@
 #	Create Response file (createResponseFile.sh)
 #	Install WebSphere Portal with response File
 #	Update ulimit in the setupCmdLine.sh of the WebSphere Portal profile
+#	update WP ConfigService with uri.home.substitution 
 #	Restart WebSphere Portal
 ##########
 
@@ -24,6 +25,7 @@ date | tee -a logs/install.log; echo | tee -a logs/install.log;
 # Update the Ulimit in the setupCmdLine.sh file 
 echo "*** Update setupCmdLine - start ***" | tee -a logs/install.log; 
 date  | tee -a logs/install.log;
+
 # This will uncomment the ulimit line
 sed -i '/ulimit/s/^#//g' $WP_PROFILE/bin/setupCmdLine.sh
 
@@ -32,6 +34,14 @@ sed -i '/ulimit/s/^#//g' $WP_PROFILE/bin/setupCmdLine.sh
 
 echo "*** Update setupCmdLine - complete ***" | tee -a logs/install.log;
 date  | tee -a logs/install.log; echo  | tee -a logs/install.log;
+
+# This will update the WP ConfigService with uri.home.substitution
+echo *** Update WP ConfigService - start *** | tee -a logs/install.log;
+
+$WP_PROFILE/bin/wsadmin.sh  -lang jython -f scripts/updateWPConfigService.py -user $WP_ADMIN -password $WP_PWD | tee -a logs/install.log;
+
+echo *** Update WP ConfigService - complete *** | tee -a logs/install.log;
+date | tee -a logs/install.log; echo | tee -a logs/install.log;
 
 # Restart WebSphere Portal
 echo "*** Restart WebSphere Portal - start ***" | tee -a logs/install.log;
