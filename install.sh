@@ -6,11 +6,12 @@
 #			IBM JDK
 # Steps: 
 #	Set Environment variables
+#	Check Media location
 #	Check ulimit
 #	Check Hostname
 #	Install Installation Manager (installIIM.sh)
 #	Install WebSphere Application Server (installWAS.sh)
-#	Install IBm JDK (installJDK.sh)
+#	Install IBM JDK (installJDK.sh)
 #	Install WebSphere Portal Server (installPortal.sh)
 ##########
 
@@ -22,8 +23,70 @@ set -a
 set +a
 
 echo "*** Set Variables - complete ***" | tee -a logs/install.log;
+date | tee -a logs/install.log; echo | tee -a logs/install.log;
+
+echo "*** Check Media Location - start ***" | tee logs/install.log
+date | tee -a logs/install.log; 
+
+if [ -f $WAS_MEDIA/repository.config ]
+then
+        echo "WAS_MEDIA is present" | tee -a logs/install.log;
+else
+        echo "WAS_MEDIA can't be found" | tee -a logs/install.log;
+        exit 1;
+fi
+
+if [ -f $JAVA_MEDIA/repository.config ]
+then
+        echo "JAVA_MEDIA is present" | tee -a logs/install.log;
+else
+        echo "JAVA_MEDIA can't be found" | tee -a logs/install.log;
+        exit 1;
+fi
+
+if [ -f $WP_SERVER_MEDIA/repository.config ]
+then
+        echo "WP_SERVER_MEDIA is present" | tee -a logs/install.log;
+else
+        echo "WP_SERVER_MEDIA can't be found" | tee -a logs/install.log;
+        exit 1;
+fi
+
+if [ -f $WP_ENABLE_MEDIA/repository.config ]
+then
+        echo "WP_ENABLE_MEDIA is present" | tee -a logs/install.log;
+else
+        echo "WP_ENABLE_MEDIA can't be found" | tee -a logs/install.log;
+        exit 1;
+fi
+
+if [ -f $FP_WAS_MEDIA/repository.config ]
+then
+        echo "FP_WAS_MEDIA is present" | tee -a logs/install.log;
+else
+        echo "FP_WAS_MEDIA can't be found" | tee -a logs/install.log;
+        exit 1;
+fi
+
+if [ -f $FP_JAVA_MEDIA/repository.config ]
+then
+        echo "FP_JAVA_MEDIA is present" | tee -a logs/install.log;
+else
+        echo "FP_JAVA_MEDIA can't be found" | tee -a logs/install.log;
+        exit 1;
+fi
+
+if [ -f $CF_WP_MEDIA/repository.config ]
+then
+        echo "CF_WP_MEDIA is present" | tee -a logs/install.log;
+else
+        echo "CF_WP_MEDIA can't be found" | tee -a logs/install.log;
+        exit 1;
+fi
+
+echo "*** Check Media Location - complete ***" | tee -a logs/install.log
 date | tee -a logs/install.log;
-echo | tee -a logs/install.log;
+
 
 ulimit -n 10240;
 
@@ -61,8 +124,11 @@ date | tee -a logs/install.log; echo | tee -a logs/install.log;
 
 ./installIIM.sh;
 ./installWAS.sh;
-./installJDK.sh;
-./installPortal.sh;
+./installJAVA.sh;
+./installWP.sh;
+
+./updateWAS.sh;
+./updateWP.sh;
 
 echo "Everything Complete" | tee -a logs/install.log;
 date | tee -a logs/install.log; echo | tee -a logs/install.log;

@@ -1,0 +1,4 @@
+PWordDelete=false
+WasPassword=${WP_PWD}
+PortalAdminPwd=${WP_PWD}
+XmlAccessHost=${WP_HOSTNAME}

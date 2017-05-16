@@ -15,15 +15,16 @@ if [ "$(id -u)" != "0" ]
 then
 
 echo "Installing as Non-Root" | tee -a logs/install.log;
-$IIM_MEDIA/userinstc -installationDirectory $IIM_HOME/eclipse -log $IIM_HOME/IIM_Install.log -acceptLicense | tee -a logs/install_IIM.log;
+whoami | tee -a logs/install.log;
+$IIM_MEDIA/userinstc -installationDirectory $IIM_HOME/eclipse -log $IIM_HOME/IIM_Install.log -acceptLicense ;
 
 else
 
 echo "Installing as Root" | tee -a logs/install.log;
 echo $IIM_HOME
-$IIM_MEDIA/installc -installationDirectory $IIM_HOME/eclipse -log $IIM_HOME/IIM_Install.log -acceptLicense | tee -a logs/install_IIM.log;
+$IIM_MEDIA/installc -installationDirectory $IIM_HOME/eclipse -log $IIM_HOME/IIM_Install.log -acceptLicense ;
 
 fi
-
+echo "Check logs/install_IIM.log for IBM Installation Manager install logs" | tee -a logs/install.log;
 echo "*** Installation Manager - complete ***" | tee -a logs/install.log;
 date | tee -a logs/install.log; echo | tee -a logs/install.log;

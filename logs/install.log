@@ -1,0 +1,207 @@
+*** Check Media Location - start ***
+Tue May 16 06:44:01 CDT 2017
+WAS_MEDIA is present
+JAVA_MEDIA is present
+WP_SERVER_MEDIA is present
+WP_ENABLE_MEDIA is present
+FP_WAS_MEDIA is present
+FP_JAVA_MEDIA is present
+CF_WP_MEDIA is present
+*** Check Media Location - complete ***
+Tue May 16 06:44:01 CDT 2017
+*** Check Ulimit - start ***
+Tue May 16 06:44:01 CDT 2017
+*** Check Ulimit - complete ***
+Tue May 16 06:44:01 CDT 2017
+
+
+*** Check Hostname - start ***
+Tue May 16 06:44:01 CDT 2017
+Ping Hostname success
+*** Checking Hostname - complete ***
+Tue May 16 06:44:03 CDT 2017
+
+
+*** Install IIM - start ***
+Tue May 16 06:44:03 CDT 2017
+Installing as Root
+Check logs/install_IIM.log for IBM Installation Manager install logs
+*** Installation Manager - complete ***
+Tue May 16 06:44:33 CDT 2017
+
+*** WebSphere Application Server 8.5 - start ***
+Tue May 16 06:44:33 CDT 2017
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Installed com.ibm.websphere.ND.v85_8.5.5002.20140408_1947 to the /opt/IBM/WebSphere/AppServer directory.
+Installed 8.5.5.2-WS-WAS-IFPI15581_8.5.5002.20140411_1052 to the /opt/IBM/WebSphere/AppServer directory.
+Installed 8.5.5.0-WS-WASProd-IFPI15756_8.5.5000.20140411_1012 to the /opt/IBM/WebSphere/AppServer directory.
+*** WebSphere Application Server 8.5 - complete ***
+Tue May 16 06:47:18 CDT 2017
+
+*** WebSphere Java - start ***
+Tue May 16 06:47:18 CDT 2017
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Installed com.ibm.websphere.IBMJAVA.v70_7.0.6001.20140324_2202 to the /opt/IBM/WebSphere/AppServer directory.
+*** WebSphere Java - complete ***
+Tue May 16 06:47:29 CDT 2017
+
+*** Set variables - start ***
+Tue May 16 06:47:29 CDT 2017
+*** Set Variables - complete ***
+Tue May 16 06:47:29 CDT 2017
+
+*** Encrypt Password file - start ***
+Tue May 16 06:47:29 CDT 2017
+*** Encrypt Password file - complete ***
+Tue May 16 06:47:34 CDT 2017
+
+*** Create Response File - start ***
+Tue May 16 06:47:34 CDT 2017
+*** Create Response File - complete ***
+Tue May 16 06:47:34 CDT 2017
+
+*** Install Portal - start ***
+Tue May 16 06:47:34 CDT 2017
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+..............................................................
+IBM WebSphere Portal Server V8.5 installation is complete.
+You can now access your Portal at: http://mywps85.ibm.com:10039/wps/portal
+
+..............
+Installed com.ibm.websphere.PORTAL.SERVER.v85_8.5.0.20140424_2155 to the /opt/IBM/WebSphere/PortalServer directory.
+Installed com.ibm.websphere.PORTAL.ENABLE.v85_8.5.0.20140424_2150 to the /opt/IBM/WebSphere/PortalServer directory.
+Review the WP85_Install_Enable.log file to verify WebSphere Portal has been installed correctly.
+*** Install Portal - complete ***
+Tue May 16 07:37:52 CDT 2017
+
+*** Update setupCmdLine - start ***
+Tue May 16 07:37:52 CDT 2017
+*** Update setupCmdLine - complete ***
+Tue May 16 07:37:52 CDT 2017
+
+*** Update WP ConfigService - start ***
+WASX7209I: Connected to process "WebSphere_Portal" on node wpNode01 using SOAP connector;  The type of process is: UnManagedProcess
+"WP ConfigService(cells/wpCell01/nodes/wpNode01/servers/WebSphere_Portal|resources.xml#ResourceEnvironmentProvider_1494936362496)"
+(cells/wpCell01/nodes/wpNode01/servers/WebSphere_Portal|resources.xml#J2EEResourcePropertySet_1494936362498)
+*** Update WP ConfigService - complete ***
+Tue May 16 07:37:59 CDT 2017
+
+*** Restart WebSphere Portal - start ***
+Tue May 16 07:37:59 CDT 2017
+*** Restart WebSphere Portal - complete ***
+Tue May 16 07:38:56 CDT 2017
+
+
+*** Update WAS/JDK - start ***
+Tue May 16 07:38:56 CDT 2017
+
+*** Stop Configuration Wizard - start ***
+Tue May 16 07:38:56 CDT 2017
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WebSphere/AppServer/profiles/cw_profile/logs/server1/stopServer.log
+ADMU0128I: Starting tool with the cw_profile profile
+ADMU3100I: Reading configuration for server: server1
+ADMU3201I: Server stop request issued. Waiting for stop status.
+ADMU4000I: Server server1 stop completed.
+
+
+*** Stop Configuration Wizard - complete ***
+Tue May 16 07:39:05 CDT 2017
+
+*** Stop WebSphere_Portal - start ***
+Tue May 16 07:39:05 CDT 2017
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WebSphere/wp_profile/logs/WebSphere_Portal/stopServer.log
+ADMU0128I: Starting tool with the wp_profile profile
+ADMU3100I: Reading configuration for server: WebSphere_Portal
+ADMU3201I: Server stop request issued. Waiting for stop status.
+ADMU4000I: Server WebSphere_Portal stop completed.
+
+
+*** Stop WebSphere_Portal - complete ***
+Tue May 16 07:39:19 CDT 2017
+
+*** Upgrade WAS FP - start ***
+Tue May 16 07:39:19 CDT 2017
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Updated to com.ibm.websphere.ND.v85_8.5.5011.20161206_1434 in the /opt/IBM/WebSphere/AppServer directory.
+
+*** Upgrade WAS FP - complete ***
+Tue May 16 07:41:07 CDT 2017
+
+*** Upgrade JAVA - start ***
+Tue May 16 07:41:07 CDT 2017
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Updated to com.ibm.websphere.IBMJAVA.v70_7.0.9060.20161124_1308 in the /opt/IBM/WebSphere/AppServer directory.
+
+*** Upgrade JAVA - complete ***
+
+*** Update WAS/JDK - complete ***
+Tue May 16 07:41:25 CDT 2017
+
+*** Update WebSphere Portal - start ***
+Tue May 16 07:41:25 CDT 2017
+
+*** Update WebSphere Portal property files - start ***
+Tue May 16 07:41:25 CDT 2017
+
+*** Set variables - start ***
+Tue May 16 07:41:25 CDT 2017
+
+*** Set Variables - complete ***
+Tue May 16 07:41:26 CDT 2017
+
+
+*** Create CF Properties File - start ***
+Tue May 16 07:41:26 CDT 2017
+
+*** Create Response File - complete ***
+Tue May 16 07:41:27 CDT 2017
+
+
+*** Update Portal Properties File - start ***
+Tue May 16 07:41:27 CDT 2017
+
+*** Update Portal Properties File - complete ***
+Tue May 16 07:41:43 CDT 2017
+
+
+*** Update WebSphere Portal property files - complete ***
+Tue May 16 07:41:43 CDT 2017
+
+*** Update WebSphere Portal with IIM - start ***
+Tue May 16 07:41:43 CDT 2017
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+..............................................................
+IBM WebSphere Portal Server V8.5 files have been upgraded.
+To complete the process, you must now update all existing Portal profiles.
+See the fix instructions for details:
+http://www-10.lotus.com/ldd/portalwiki.nsf/xpDocViewer.xsp?lookupName=Combined+Cumulative+Fix+Readme+V8.5.0.0#action=openDocument&content=catcontent&ct=prodDoc
+
+..............
+Updated to com.ibm.websphere.PORTAL.SERVER.v85_8.5.0.20161208_1514 in the /opt/IBM/WebSphere/PortalServer directory.
+
+*** Update WebSphere Portal with IIM - complete ***
+Tue May 16 07:55:30 CDT 2017
+
+*** WP applyCF - start ***
+Tue May 16 07:55:30 CDT 2017
+
+*** WP applyCF - complete ***
+Tue May 16 08:44:32 CDT 2017
+
+*** Update WebSphere Portal - complete ***
+Tue May 16 08:44:32 CDT 2017
+Everything Complete
+Tue May 16 08:44:32 CDT 2017
+
