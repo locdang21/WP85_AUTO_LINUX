@@ -19,8 +19,8 @@
 <preference name='com.ibm.cic.common.sharedUI.showWarningLog' value='true'/>
 <preference name='com.ibm.cic.common.sharedUI.showNoteLog' value='true'/>
 <server>
-<repository location='/opt/tmp/WP85/WP85_Server'/>
-<repository location='/opt/tmp/WP85/WP85_Enable'/>
+<repository location='/opt/tmp/WCM85/WP85_Server'/>
+<repository location='/opt/tmp/WCM85/WP85_WCM'/>
 </server>
 <profile id='IBM WebSphere Portal Server V8.5' installLocation='/opt/IBM/WebSphere/PortalServer'>
 <data key='eclipseLocation' value='/opt/IBM/WebSphere/PortalServer'/>
@@ -50,6 +50,6 @@
 </profile>
 <install modify='false'>
 <offering id='com.ibm.websphere.PORTAL.SERVER.v85' version='8.5.0.20140424_2155' profile='IBM WebSphere Portal Server V8.5' features='ce.install,portal.binary,portal.profile' installFixes='none'/>
-<offering id='com.ibm.websphere.PORTAL.ENABLE.v85' version='8.5.0.20140424_2150' profile='IBM WebSphere Portal Server V8.5' features='enable.upsell' installFixes='none'/>
+<offering id='com.ibm.websphere.PORTAL.WCM.v85' version='8.5.0.20140424_2150' profile='IBM WebSphere Portal Server V8.5' features='enable.upsell' installFixes='none'/>
 </install>
 </agent-input>
