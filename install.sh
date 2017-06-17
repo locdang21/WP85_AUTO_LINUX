@@ -52,11 +52,11 @@ else
         exit 1;
 fi
 
-if [ -f $WP_ENTITLEMENT_MEDIA/repository.config ]
+if [ -f $WP_ENABLE_MEDIA/repository.config ]
 then
-        echo "WP_ENTITLEMENT_MEDIA is present" | tee -a logs/install.log;
+        echo "WP_ENABLE_MEDIA is present" | tee -a logs/install.log;
 else
-        echo "WP_ENTITLEMENT_MEDIA can't be found" | tee -a logs/install.log;
+        echo "WP_ENABLE_MEDIA can't be found" | tee -a logs/install.log;
         exit 1;
 fi
 
