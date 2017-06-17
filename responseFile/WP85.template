@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--The "acceptLicense" attribute has been deprecated. Use "-acceptLicense" command line option to accept license agreements.-->
 <agent-input acceptLicense='true'>
-<preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='/opt/IBM/IIMShared'/>
+<preference name='com.ibm.cic.common.core.preferences.eclipseCache' value='${IIM_SHARED}'/>
 <preference name='com.ibm.cic.common.core.preferences.connectTimeout' value='30'/>
 <preference name='com.ibm.cic.common.core.preferences.readTimeout' value='45'/>
 <preference name='com.ibm.cic.common.core.preferences.downloadAutoRetryCount' value='0'/>
@@ -19,37 +19,37 @@
 <preference name='com.ibm.cic.common.sharedUI.showWarningLog' value='true'/>
 <preference name='com.ibm.cic.common.sharedUI.showNoteLog' value='true'/>
 <server>
-<repository location='/opt/tmp/WP85/WP85_Server'/>
-<repository location='/opt/tmp/WP85/WP85_Enable'/>
+<repository location='${WP_SERVER_MEDIA}'/>
+<repository location='${WP_ENTITLEMENT_MEDIA}'/>
 </server>
-<profile id='IBM WebSphere Portal Server V8.5' installLocation='/opt/IBM/WebSphere/PortalServer'>
-<data key='eclipseLocation' value='/opt/IBM/WebSphere/PortalServer'/>
+<profile id='IBM WebSphere Portal Server V8.5' installLocation='${WP_HOME}'>
+<data key='eclipseLocation' value='${WP_HOME}'/>
 <data key='user.import.profile' value='false'/>
 <data key='cic.selector.os' value='linux'/>
 <data key='cic.selector.arch' value='x86_64'/>
 <data key='cic.selector.ws' value='gtk'/>
-<data key='user.configengine.binaryLocation,com.ibm.websphere.PORTAL.SERVER.v85' value='/opt/IBM/WebSphere/ConfigEngine'/>
+<data key='user.configengine.binaryLocation,com.ibm.websphere.PORTAL.SERVER.v85' value='${CE_HOME}'/>
 <data key='cic.selector.nl' value='en'/>
-<data key='user.was.installLocation,com.ibm.websphere.PORTAL.SERVER.v85' value='/opt/IBM/WebSphere/AppServer'/>
-<data key='user.wp.wasprofiles.location,com.ibm.websphere.PORTAL.SERVER.v85' value='/opt/IBM/WebSphere/AppServer/profiles'/>
-<data key='user.cw.userid,com.ibm.websphere.PORTAL.SERVER.v85' value='cwadmin'/>
-<data key='user.cw.password,com.ibm.websphere.PORTAL.SERVER.v85' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
+<data key='user.was.installLocation,com.ibm.websphere.PORTAL.SERVER.v85' value='${WAS_HOME}'/>
+<data key='user.wp.wasprofiles.location,com.ibm.websphere.PORTAL.SERVER.v85' value='${WAS_HOME}/profiles'/>
+<data key='user.cw.userid,com.ibm.websphere.PORTAL.SERVER.v85' value='${CW_ADMIN}'/>
+<data key='user.cw.password,com.ibm.websphere.PORTAL.SERVER.v85' value='${CW_PWD}'/>
 <data key='user.iim.currentlocale,com.ibm.websphere.PORTAL.SERVER.v85' value='en'/>
 <data key='user.wp.base.offering,com.ibm.websphere.PORTAL.SERVER.v85' value='portal.server'/>
-<data key='user.wp.hostname,com.ibm.websphere.PORTAL.SERVER.v85' value='mywps85.ibm.com'/>
-<data key='user.wp.nodename,com.ibm.websphere.PORTAL.SERVER.v85' value='wpNode01'/>
-<data key='user.wp.cellname,com.ibm.websphere.PORTAL.SERVER.v85' value='wpCell01'/>
-<data key='user.wp.userid,com.ibm.websphere.PORTAL.SERVER.v85' value='wpadmin'/>
-<data key='user.wp.password,com.ibm.websphere.PORTAL.SERVER.v85' value='rbN1IaMAWYYtQxLf6KdNyA=='/>
-<data key='user.wp.custom.contextroot,com.ibm.websphere.PORTAL.SERVER.v85' value='wps'/>
-<data key='user.wp.custom.defaulthome,com.ibm.websphere.PORTAL.SERVER.v85' value='portal'/>
-<data key='user.wp.custom.personalhome,com.ibm.websphere.PORTAL.SERVER.v85' value='myportal'/>
-<data key='user.wp.profilename,com.ibm.websphere.PORTAL.SERVER.v85' value='wp_profile'/>
-<data key='user.wp.profilepath,com.ibm.websphere.PORTAL.SERVER.v85' value='/opt/IBM/WebSphere/wp_profile'/>
-<data key='user.wp.starting.port,com.ibm.websphere.PORTAL.SERVER.v85' value='10012'/>
+<data key='user.wp.hostname,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_HOSTNAME}'/>
+<data key='user.wp.nodename,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_NODE}'/>
+<data key='user.wp.cellname,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_CELL}'/>
+<data key='user.wp.userid,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_ADMIN}'/>
+<data key='user.wp.password,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_PWD}'/>
+<data key='user.wp.custom.contextroot,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_CONTEXT}'/>
+<data key='user.wp.custom.defaulthome,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_DEFAULT}'/>
+<data key='user.wp.custom.personalhome,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_PERSONALIZED}'/>
+<data key='user.wp.profilename,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_PROFILENAME}'/>
+<data key='user.wp.profilepath,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_PROFILE}'/>
+<data key='user.wp.starting.port,com.ibm.websphere.PORTAL.SERVER.v85' value='${WP_STARTPORT}'/>
 </profile>
 <install modify='false'>
 <offering id='com.ibm.websphere.PORTAL.SERVER.v85' version='8.5.0.20140424_2155' profile='IBM WebSphere Portal Server V8.5' features='ce.install,portal.binary,portal.profile' installFixes='none'/>
-<offering id='com.ibm.websphere.PORTAL.ENABLE.v85' version='8.5.0.20140424_2150' profile='IBM WebSphere Portal Server V8.5' features='enable.upsell' installFixes='none'/>
+<offering id='com.ibm.websphere.PORTAL.${WP_ENTITLEMENT}.v85' version='8.5.0.20140424_2150' profile='IBM WebSphere Portal Server V8.5' features='enable.upsell' installFixes='none'/>
 </install>
 </agent-input>
